@@ -1,0 +1,180 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.square {
+    font-size: 14px;
+}
+
+body {
+    background-color: #212121;
+}
+
+.container {
+    height: 100vh;
+}
+
+.background-div {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-calc {
+    border-radius: 10px;
+    width: 350px;
+    height: 460px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card {
+    --background: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
+    width: 350px;
+    height: 480px;
+    padding: 5px;
+    border-radius: 1rem;
+    overflow: visible;
+    background: #f7ba2b;
+    background: var(--background);
+    position: relative;
+    z-index: 1;
+}
+
+.card::after {
+    position: absolute;
+    content: "";
+    top: 30px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    transform: scale(0.8);
+    filter: blur(25px);
+    background: #f7ba2b;
+    background: var(--background);
+    transition: opacity .5s;
+}
+
+.card-info {
+    --color: #181818;
+    background: var(--color);
+    color: var(--color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    border-radius: .7rem;
+}
+
+.card {
+    font-weight: bold;
+    letter-spacing: .1em;
+}
+
+/*Hover*/
+.card:hover::after {
+    opacity: 0;
+}
+
+.card:hover .card-info {
+    color: #f7ba2b;
+    transition: color 1s;
+}
+
+.calc-screen {
+    background-color: aliceblue;
+    width: 320px;
+    height: 90px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 10px 0px 10px 0px;
+    cursor: text;
+    font-size: 35px;
+    text-align: right;
+}
+
+.numbers {
+    width: 320px;
+    height: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.num-div {
+    width: 75px;
+    height: 60px;
+    background-color: aliceblue;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.num-div>span {
+
+    color: black;
+    background-color: aliceblue;
+    font-size: 23px;
+}
+
+.back-img {
+    text-align: end;
+    width: 40px;
+}
+
+
+@media only screen and (max-width: 375px) {
+    .main-calc {
+        width: 300px;
+    }
+
+    .calc-screen {
+        width: 280px;
+    }
+
+    .numbers {
+        width: 270px;
+    }
+
+    .num-div {
+        width: 65px;
+    }
+
+}
+
+@media only screen and (max-width: 325px) {
+    .main-calc {
+        width: 250px;
+        height: 410px;
+    }
+
+    .calc-screen {
+        width: 230px;
+        height: 100px;
+        margin: 10px 0px 10px 0px;
+
+    }
+
+    .numbers {
+        width: 230px;
+        height: 350px;
+    }
+
+    .num-div {
+        width: 55px;
+        height: 55px;
+    }
+
+}
